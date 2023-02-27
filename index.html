@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Mikael Dev">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Jogo | Mikael Dev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(0, 0%, 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header_content">
+            <div class="row">
+              <div class="col-6">
+                <div class="header_logo">
+                  <img src="./images/logo.svg" alt="logo" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="score_element">
+                  <p class="score_title">Score</p>
+                  <p class="score_value">12</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="section_game">
+        <div class="container">
+          <div id="game_choices">
+            <div class="game_choices-content active">
+              <img
+                src="./images/bg-triangle.svg"
+                alt="image"
+                class="bg-shape"
+              />
+              <button class="btn-choice paper">
+                <img src="./images/icon-paper.svg" alt="image" />
+              </button>
+              <button class="btn-choice scissors">
+                <img src="./images/icon-scissors.svg" alt="image" />
+              </button>
+              <button class="btn-choice rock">
+                <img src="./images/icon-rock.svg" alt="image" />
+              </button>
+            </div>
+          </div>
+          <div id="game-result">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <h3 class="title">you picked</h3>
+                <button id="player-choice" class="btn-picked rock"></button>
+              </div>
+              <div
+                id="result-status"
+                class="col-md-2 px-0 d-flex flex-column align-items-center justify-content-center"
+              >
+                <h3 class="result-title" id="game-state">You Win</h3>
+                <button class="btn_play-again" id="play-again">
+                  Play Again
+                </button>
+              </div>
+              <div class="col-md-4">
+                <h3 class="title">the house picked</h3>
+                <button id="house-choice" class="btn-picked empty"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn-rules"
+        data-toggle="modal"
+        data-target="#modal1"
+      >
+        Rules
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="modal1"
+        tabindex="-1"
+        aria-labelledby="Modal1Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="Modal1Label">Rules</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img
+                class="img-rules d-block mx-auto"
+                src="./images/image-rules.svg"
+                alt="image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/techGuy08/" target="_blank">Amine S.</a>.
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
+

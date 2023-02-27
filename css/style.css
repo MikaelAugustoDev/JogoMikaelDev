@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400,500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  background-size: cover;
+  min-height: 100vh;
+  color: #fff;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+.container {
+  max-width: 1366px;
+}
+.header_content {
+  max-width: 800px;
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 20px;
+  margin: 60px auto 50px;
+  padding: 20px;
+}
+.score_element {
+  width: 130px;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  margin: 0 0 0 auto;
+  border-radius: 6px;
+  padding-top: 8px;
+  padding-bottom: 15px;
+}
+
+.score_title {
+  margin: 0;
+  font-weight: 600;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.score_value {
+  margin: 0;
+  font-size: 60px;
+  line-height: 50px;
+  font-weight: bold;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.game_choices-content {
+  max-width: 305px;
+  min-height: 277px;
+  margin: 100px auto 90px;
+  position: relative;
+  display: none;
+}
+.game_choices-content.active {
+  display: block;
+  transition: 0.8s;
+
+  animation: gameChoice 0.8s ease-in-out;
+}
+@keyframes gameChoice {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.7) rotate(15deg) translate(0%, 50%);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.game_choices-content .bg-shape {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.game_choices-content .btn-choice {
+  position: absolute;
+  background-color: #fff;
+  border: 18px solid hsl(230, 89%, 62%);
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  top: 20px;
+  left: 20px;
+  box-shadow: inset 0px 0px 12px 5px rgb(0 0 0 / 30%);
+  cursor: pointer;
+}
+
+.game_choices-content .btn-choice.scissors {
+  left: calc(100% - 20px);
+  border-color: hsl(39, 89%, 49%);
+}
+
+.game_choices-content .btn-choice.rock {
+  left: 50%;
+  top: calc(100% - 50px);
+  border-color: hsl(349, 71%, 52%);
+}
+#game-result {
+  margin: 60px auto;
+  display: none;
+}
+#game-result.active {
+  display: block;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.btn-picked {
+  border: 36px solid hsl(230, 89%, 62%);
+  border-radius: 50%;
+  width: 280px;
+  height: 280px;
+  box-shadow: inset 0px 0px 12px 5px rgb(0 0 0 / 30%);
+  display: block;
+  margin: 60px auto;
+  position: relative;
+}
+.btn-picked.paper {
+  border-color: hsl(230, 89%, 62%);
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+.btn-picked.rock {
+  border-color: hsl(349, 71%, 52%);
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+.btn-picked.scissors {
+  border-color: hsl(39, 89%, 49%);
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+.btn-picked.empty {
+  border: 0;
+  width: 200px;
+  height: 200px;
+  margin-top: 40px;
+  background: #17223e;
+  box-shadow: inset 0 0 4px 0px rgb(0 0 0 / 30%);
+}
+.btn-picked::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+}
+.btn-picked.paper::after {
+  background-image: url("../images/icon-paper.svg");
+}
+
+.btn-picked.scissors::after {
+  background-image: url("../images/icon-scissors.svg");
+}
+
+.btn-picked.rock::after {
+  background-image: url("../images/icon-rock.svg");
+}
+
+#game-result .title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 90px;
+  font-weight: bold;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+.result-title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 50px;
+  min-width: 130%;
+}
+.btn_play-again {
+  display: block;
+  width: 100%;
+  border: 0;
+  color: hsl(229, 25%, 31%);
+  background: #fff;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  max-width: 200px;
+  margin-bottom: 50px;
+}
+#result-status {
+  display: none !important;
+}
+#result-status.active {
+  display: flex !important;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.btn-rules {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-weight: 600;
+  font-family: inherit;
+  background: transparent;
+  color: #fff;
+  border: 1px solid hsl(217, 16%, 45%);
+  padding: 5px 18px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+#modal1 .modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 80vh; */
+  padding: 20px 0;
+}
+.modal .modal-header {
+  border: 0;
+}
+.modal .modal-title {
+  color: hsl(229, 25%, 31%);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.modal-dialog {
+  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%) !important;
+}
+
+.img-rules {
+  max-width: 80%;
+}
+
+.modal .close {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 20px;
+  color: hsl(217, 16%, 45%);
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    background: #00f;
+  }
+}
